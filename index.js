@@ -55,8 +55,8 @@ inquirer
         console.log('SVG', svg);
 
         //writing svg file
-        fs.writeFileSync('output.html', svg);
-        console.log('File created')
+        fs.writeFileSync('logo.svg', svg);
+        console.log('Generate Logo')
     })
      
     .catch((error) =>{
