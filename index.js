@@ -2,6 +2,23 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const { Triangle, Circle, Square} = require('./lib/shapes');
 
+//Create html content with svg
+function createHTMLwithSVG(svgContent) {
+   return `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>SVG Logo</title>
+    </head>
+    <body>
+        <svg id="svg-container">
+            ${svgContent}
+        </svg>
+    </body>
+    </html>`
+};
+
 //User input prompt
 inquirer
     .prompt([
@@ -58,11 +75,7 @@ inquirer
         fs.writeFileSync('logo.svg', svg);
         console.log('Generate Logo');
 
-        //read html file
-        let htmlContent = fs.readFileSync('index.html', 'utf8');
-
-        //inserting svg
-        htmlContent = htmlContent.replace('{{SVG}}', svg);
+        const htmlContent = createHTMLwithSVG(svg);
 
         //write html content back to file
         fs.writeFileSync('index.html', htmlContent);
