@@ -56,7 +56,17 @@ inquirer
 
         //writing svg file
         fs.writeFileSync('logo.svg', svg);
-        console.log('Generate Logo')
+        console.log('Generate Logo');
+
+        //read html file
+        let htmlContent = fs.readFileSync('index.html', 'utf8');
+
+        //inserting svg
+        htmlContent = htmlContent.replace('{{SVG}}', svg);
+
+        //write html content back to file
+        fs.writeFileSync('index.html', htmlContent);
+        console.log('Updated HTML file');
     })
      
     .catch((error) =>{
