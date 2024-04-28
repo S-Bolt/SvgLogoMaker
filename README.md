@@ -16,5 +16,7 @@ The SVG Logo Maker is a command-line app that allows users to create simple SVG 
 1. Run the application by inputing "node index.js" into your CLI.
 2. Input the inormation when prompted.
 
+ [Video Demo](https://drive.google.com/file/d/1q4apFYFz-uYPLBeAo3m-IfLClvwocTLh/view) 
+
 ## License
 This project  is licensed under the MIT License.
