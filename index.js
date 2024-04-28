@@ -2,23 +2,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const { Triangle, Circle, Square} = require('./lib/shapes');
 
-//Create html content with svg
-function createHTMLwithSVG(svgContent) {
-   return `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>SVG Logo</title>
-    </head>
-    <body>
-        <svg id="svg-container">
-            ${svgContent}
-        </svg>
-    </body>
-    </html>`
-};
-
 //User input prompt
 inquirer
     .prompt([
@@ -67,7 +50,8 @@ inquirer
     
     default:
         console.log('err')
-        };
+     };
+
 
         console.log('SVG', svg);
 
@@ -85,5 +69,21 @@ inquirer
     .catch((error) =>{
         console.error('Error occurred', error);
     });
+    
+    //funtion to creat HTML content with svg
+    function createHTMLwithSVG(svgContent) {
+        return `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>SVG Logo</title>
+        </head>
+        <body>
+            <svg id="svg-container">
+                ${svgContent}
+            </svg>
+        </body>
+        </html>`;
 
- 
+    };
