@@ -1,10 +1,10 @@
-const inquirer =require('inquirer');
+const inquirer = require('inquirer');
 const fs = require('fs');
 const { Triangle, Circle, Square} = require('./lib/shapes');
 
 //User input prompt
 inquirer
-    .createPromptModule([
+    .prompt([
         {
             type: 'input',
             message: 'Enter up to three characters',
@@ -27,3 +27,12 @@ inquirer
             name: 'shapeColor'
         },
     ])
+    //process inquirer input
+    .then((data) => {
+        console.log(data)
+
+    })
+
+    //Create SVG 
+
+    //Function to write SVG
